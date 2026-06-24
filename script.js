@@ -1,35 +1,43 @@
-const orderForm = document.querySelector("#orderForm");
-const productInput = document.querySelector("#product");
-const priceInput = document.querySelector("#price");
-const quantityInput = document.querySelector("#quantity");
-const totalInput = document.querySelector("#total");
-const orderSection = document.querySelector("#order");
-
-let selectedPrice = 0;
+const productInput = document.getElementById("productName");
+const priceInput = document.getElementById("productPrice");
 
 function selectProduct(name, price) {
-  selectedPrice = Number(price);
+    productInput.value = name;
+    priceInput.value = price;
 
-  productInput.value = name;
-  priceInput.value = `${selectedPrice} Kč`;
-  quantityInput.value = 1;
-  totalInput.value = `${selectedPrice} Kč`;
-
-  orderSection.scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-  });
+    document.getElementById("objednavka").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
 
-function updateTotal() {
-  const quantity = Number(quantityInput.value) || 1;
-  const total = selectedPrice * quantity;
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
 
-  totalInput.value = `${total} Kč`;
-}
+    form.addEventListener("submit", (e) => {
+        if (!productInput.value) {
+            e.preventDefault();
+            alert("Nejprve vyberte produkt.");
+            return;
+        }
+    });
+});
+// Animace karet při scrollování
 
-quantityInput.addEventListener("input", updateTotal);
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show");
+            }
+        });
+    },
+    {
+        threshold: 0.15
+    }
+);
 
-orderForm.addEventListener("submit", () => {
-  updateTotal();
+document.querySelectorAll(".product-card").forEach((card) => {
+    card.classList.add("hidden");
+    observer.observe(card);
 });
