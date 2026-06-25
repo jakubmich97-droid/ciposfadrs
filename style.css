@@ -408,23 +408,6 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
-
-@media (max-width: 900px) {
-  .site-header {
-    min-height: auto;
-    padding: 120px 18px 60px;
-  }
-
-  .navbar {
-    width: calc(100% - 28px);
-    top: 14px;
-    border-radius: 28px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
   .hero-title {
   margin: 0 0 26px;
   max-width: 860px;
@@ -457,6 +440,23 @@ footer {
   stroke: rgba(0, 0, 0, 0.35);
   stroke-width: 1.2px;
 }
+@media (max-width: 900px) {
+  .site-header {
+    min-height: auto;
+    padding: 120px 18px 60px;
+  }
+
+  .navbar {
+    width: calc(100% - 28px);
+    top: 14px;
+    border-radius: 28px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+
   .hero {
     min-height: 620px;
     padding: 80px 22px;
