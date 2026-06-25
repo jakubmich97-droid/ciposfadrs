@@ -159,17 +159,7 @@ img {
   text-transform: uppercase;
 }
 
-.hero h1 {
-  margin: 0 0 26px;
-  max-width: 760px;
-  font-size: clamp(48px, 5.6vw, 88px);
-  font-weight: 950;
-  line-height: 0.98;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
-}
+
 
 .hero h1 span {
   color: #ef2418;
@@ -491,4 +481,20 @@ footer {
 .show {
     opacity: 1;
     transform: translateY(0);
+}
+.hero {
+  min-height: 620px;
+  padding: 80px 22px;
+  margin: 0 -18px;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.86) 0%, rgba(0, 0, 0, 0.68) 48%, rgba(0, 0, 0, 0.35) 100%),
+    url("images/foods/gulas.png") center right / cover no-repeat;
+}
+
+.hero h1 {
+  font-size: 42px;
+}
+
+.hero p {
+  font-size: 18px;
 }
