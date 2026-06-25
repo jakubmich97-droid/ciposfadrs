@@ -146,21 +146,6 @@ img {
   text-transform: uppercase;
 }
 
-.hero h1 {
-  margin: 0 0 26px;
-  max-width: 760px;
-  font-size: clamp(48px, 5.6vw, 88px);
-  font-weight: 950;
-  line-height: 0.98;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #fff;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65);
-}
-
-.hero h1 span {
-  color: #ef2418;
-}
 
 .hero p {
   max-width: 620px;
@@ -440,6 +425,38 @@ footer {
     display: none;
   }
 
+  .hero-title {
+  margin: 0 0 26px;
+  max-width: 860px;
+  line-height: 1;
+}
+
+.hero-title svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.hero-title text {
+  font-family: Impact, "Arial Black", sans-serif;
+  font-size: 74px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.svg-white {
+  fill: #f4f4f4;
+  stroke: rgba(0, 0, 0, 0.35);
+  stroke-width: 1.2px;
+}
+
+.svg-red {
+  fill: #e52a14;
+  stroke: rgba(0, 0, 0, 0.35);
+  stroke-width: 1.2px;
+}
   .hero {
     min-height: 620px;
     padding: 80px 22px;
