@@ -1,215 +1,215 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Čipoš fáDr.s | Domácí zavařeniny & guláše</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Čipoš fáDr.s – poctivé domácí dobroty ve skle. Vyberte si marmeládu, guláš nebo cibuládu a jednoduše objednejte.">
+  <meta name="theme-color" content="#120b08">
+  <title>Čipoš fáDr.s | Domácí dobroty, které mají říz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header class="site-header">
-    <nav class="navbar">
-      <a href="#" class="brand" aria-label="Čipoš fáDr.s - domů">
-        <img src="images/logos/logo.jpeg" alt="Logo Čipoš fáDr.s" class="brand-logo">
-        <span class="brand-text">Čipoš fáDr.s</span>
+    <nav class="navbar" aria-label="Hlavní navigace">
+      <a href="#uvod" class="brand" aria-label="Čipoš fáDr.s – domů">
+        <img src="images/logos/logo.jpeg" alt="" class="brand-logo">
+        <span><strong>Čipoš</strong> fáDr.s</span>
       </a>
-
       <div class="nav-links">
         <a href="#produkty">Produkty</a>
-        <a href="#ovyrobci">O výrobci</a>
-        <a href="#akce">Akce</a>
-        <a href="#objednavka">Objednávka</a>
+        <a href="#pribeh">Náš příběh</a>
+        <a href="#objednavka">Jak objednat</a>
       </div>
+      <a href="#produkty" class="nav-order">Objednat <span aria-hidden="true">→</span></a>
     </nav>
-
-     <section class="hero">
-  
-      <div class="hero-content">
-  
-          <span class="hero-label">POCTIVÁ DOMÁCÍ VÝROBA</span>
-  
-      <h1 class="hero-title" aria-label="Domácí dobroty, které mají chuť">
-        <svg viewBox="0 0 900 260" role="img">
-          <defs>
-            <filter id="roughText">
-              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/>
-            </filter>
-      
-            <mask id="grungeMask">
-              <rect width="100%" height="100%" fill="white"/>
-              <g fill="black" opacity="0.42">
-                <circle cx="82" cy="78" r="3"/>
-                <circle cx="140" cy="116" r="2"/>
-                <circle cx="228" cy="72" r="4"/>
-                <circle cx="316" cy="138" r="3"/>
-                <circle cx="402" cy="96" r="2"/>
-                <circle cx="495" cy="154" r="4"/>
-                <circle cx="610" cy="82" r="3"/>
-                <circle cx="760" cy="142" r="4"/>
-                <circle cx="830" cy="202" r="3"/>
-                <path d="M120 52 l24 6 l-20 9 z"/>
-                <path d="M330 185 l38 8 l-28 14 z"/>
-                <path d="M700 65 l30 4 l-24 12 z"/>
-                <path d="M520 224 l44 7 l-36 11 z"/>
-              </g>
-            </mask>
-          </defs>
-      
-          <text x="0" y="72" class="svg-white" mask="url(#grungeMask)" filter="url(#roughText)">
-            DOMÁCÍ DOBROTY,
-          </text>
-      
-          <text x="0" y="160" class="svg-white" mask="url(#grungeMask)" filter="url(#roughText)">
-            KTERÉ MAJÍ
-          </text>
-      
-          <text x="600" y="160" class="svg-red" mask="url(#grungeMask)" filter="url(#roughText)">
-            CHUŤ
-          </text>
-        </svg>
-      </h1>
-  
-          <p>
-              Zavařeniny, guláše a další dobroty ze sklenice.<br>
-              Vyrobeno s láskou, bez zbytečností.
-          </p>
-  
-          <a href="#produkty" class="btn">
-              Vybrat produkt
-          </a>
-  
-      </div>
-  
-  
-  
-  </section>
   </header>
 
   <main>
+    <section id="uvod" class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <p class="eyebrow"><span></span> Poctivá domácí výroba</p>
+          <h1>Domácí dobroty,<br>které mají <em>říz.</em></h1>
+          <p class="hero-copy">Zavařeniny, guláše a další dobroty ze sklenice. Vaříme v malých dávkách, z dobrých surovin a bez zbytečností.</p>
+          <div class="hero-actions">
+            <a href="#produkty" class="btn btn-primary">Vybrat dobrotu <span>→</span></a>
+            <a href="#pribeh" class="text-link">Proč chutnají jinak <span>↘</span></a>
+          </div>
+          <div class="hero-trust" aria-label="Výhody">
+            <span>✓ Ruční výroba</span>
+            <span>✓ Malé várky</span>
+            <span>✓ Poctivá chuť</span>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <span class="hero-card-label">Tip fáDr.s</span>
+          <strong>Hovězí guláš</strong>
+          <p>Otevřít. Ohřát. Vychutnat.</p>
+          <div><span>500 ml</span><b>189 Kč</b></div>
+        </aside>
+      </div>
+    </section>
 
-    <section id="produkty" class="section">
-      <div class="section-head">
-        <p class="label">Nabídka</p>
-        <h2>Naše produkty</h2>
-        <p class="section-text">Vyberte produkt, zadejte počet kusů a odešlete objednávku e-mailem.</p>
+    <section id="produkty" class="section products-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow dark"><span></span> Co je právě ve spíži</p>
+          <h2>Vyberte si<br><em>svou sklenici.</em></h2>
+        </div>
+        <p>Každý produkt připravujeme v malých dávkách. Když dojde, vaříme znovu — žádný sklad plný kompromisů.</p>
       </div>
 
       <div class="product-grid">
-
-        <article class="product-card">
-          <img src="images/marmelada.jpg" alt="Domácí jahodová marmeláda">
-          <div class="product-info">
-            <span class="badge">Sladké</span>
+        <article class="product-card berry">
+          <div class="product-visual">
+            <span class="product-number">01</span>
+            <span class="product-icon" aria-hidden="true">🍓</span>
+            <span class="stock">Skladem</span>
+          </div>
+          <div class="product-content">
+            <p class="product-type">Sladká klasika</p>
             <h3>Jahodová marmeláda</h3>
-            <p>Poctivá domácí marmeláda z jahod, ideální na pečivo i palačinky.</p>
-            <span class="price">129 Kč / 250 ml</span>
-            <button type="button" onclick="selectProduct('Jahodová marmeláda', 129, '250 ml')">
-              Objednat
-            </button>
+            <p>Poctivá domácí marmeláda plná jahod. Na čerstvý chleba, palačinky i jen tak na lžičku.</p>
+            <div class="product-bottom">
+              <div><strong>129 Kč</strong><span>250 ml</span></div>
+              <button type="button" class="product-button" data-product="Jahodová marmeláda" data-price="129" data-variant="250 ml" aria-label="Objednat Jahodovou marmeládu">Přidat <span>＋</span></button>
+            </div>
           </div>
         </article>
 
-        <article class="product-card product-card-featured">
-          <img src="images/gulas.jpg" alt="Domácí hovězí guláš">
-          <div class="product-info">
-            <span class="badge badge-hot">Nejoblíbenější</span>
+        <article class="product-card goulash featured">
+          <div class="product-visual photo">
+            <span class="product-number">02</span>
+            <span class="bestseller">Nejoblíbenější</span>
+            <span class="stock">Skladem</span>
+          </div>
+          <div class="product-content">
+            <p class="product-type">Pořádná porce</p>
             <h3>Hovězí guláš</h3>
-            <p>Silný domácí guláš ve skle. Stačí ohřát a podávat.</p>
-            <span class="price">189 Kč / 500 ml</span>
-            <button type="button" onclick="selectProduct('Hovězí guláš', 189, '500 ml')">
-              Objednat
-            </button>
+            <p>Silný domácí guláš ve skle. Pomalu tažené maso, výrazná šťáva a večeře hotová za pár minut.</p>
+            <div class="product-bottom">
+              <div><strong>189 Kč</strong><span>500 ml</span></div>
+              <button type="button" class="product-button" data-product="Hovězí guláš" data-price="189" data-variant="500 ml" aria-label="Objednat Hovězí guláš">Přidat <span>＋</span></button>
+            </div>
           </div>
         </article>
 
-        <article class="product-card">
-          <img src="images/cibulada.jpg" alt="Domácí cibuláda">
-          <div class="product-info">
-            <span class="badge">K masu</span>
+        <article class="product-card onion">
+          <div class="product-visual">
+            <span class="product-number">03</span>
+            <span class="product-icon" aria-hidden="true">🧅</span>
+            <span class="stock">Skladem</span>
+          </div>
+          <div class="product-content">
+            <p class="product-type">K masu i sýru</p>
             <h3>Sladká cibuláda</h3>
-            <p>Výborná k masu, sýrům nebo burgerům.</p>
-            <span class="price">119 Kč / 200 ml</span>
-            <button type="button" onclick="selectProduct('Sladká cibuláda', 119, '200 ml')">
-              Objednat
-            </button>
+            <p>Pomalu karamelizovaná cibule, která povýší burger, grilované maso i sýrové prkénko.</p>
+            <div class="product-bottom">
+              <div><strong>119 Kč</strong><span>200 ml</span></div>
+              <button type="button" class="product-button" data-product="Sladká cibuláda" data-price="119" data-variant="200 ml" aria-label="Objednat Sladkou cibuládu">Přidat <span>＋</span></button>
+            </div>
           </div>
         </article>
-
       </div>
     </section>
 
-    <section id="ovyrobci" class="section about">
-      <div class="about-content">
-        <p class="label">O výrobci</p>
-        <h2>Poctivá domácí výroba</h2>
-        <p>
-          Produkty vznikají v malých dávkách s důrazem na chuť,
-          kvalitu a ruční práci. Každá sklenice je připravená tak,
-          jak bychom ji chtěli dát vlastní rodině.
-        </p>
+    <section id="pribeh" class="story-section">
+      <div class="story-image">
+        <span>Vařeno<br>srdcem.</span>
       </div>
-
-      <div class="about-image">
-        <img src="images/vyrobce.jpg" alt="Výrobce domácích produktů">
+      <div class="story-content">
+        <p class="eyebrow"><span></span> Od nás k vám</p>
+        <h2>Žádná továrna.<br><em>Jen dobré jídlo.</em></h2>
+        <p>Produkty vznikají ručně, v malých várkách a s důrazem na chuť. Každou sklenici připravujeme tak, jak bychom ji chtěli servírovat vlastní rodině.</p>
+        <div class="story-points">
+          <div><strong>01</strong><span>Pečlivě vybrané suroviny</span></div>
+          <div><strong>02</strong><span>Poctivá ruční příprava</span></div>
+          <div><strong>03</strong><span>Sklenice plná chuti</span></div>
+        </div>
       </div>
     </section>
 
-    <section id="akce" class="section promo">
-      <div>
-        <p class="label">Aktuální akce</p>
-        <h2>Sezónní nabídka</h2>
-        <p>Tento měsíc balíček 3 domácích zavařenin za zvýhodněnou cenu.</p>
-      </div>
-      <a href="#objednavka" class="btn">Objednat balíček</a>
-    </section>
-
-    <section id="objednavka" class="section order">
-      <div class="section-head">
-        <p class="label">Objednávka</p>
-        <h2>Objednávkový formulář</h2>
-        <p class="section-text">Po odeslání přijde objednávka na e-mail výrobce.</p>
+    <section id="objednavka" class="order-section">
+      <div class="order-intro">
+        <p class="eyebrow dark"><span></span> Jednoduchá objednávka</p>
+        <h2>Máte<br><em>vybráno?</em></h2>
+        <p>Vyberte produkt, počet kusů a doplňte kontakt. Objednávku potvrdíme a domluvíme s vámi předání.</p>
+        <ol>
+          <li><span>1</span> Vyberete dobrotu</li>
+          <li><span>2</span> Odešlete kontakt</li>
+          <li><span>3</span> Potvrdíme objednávku</li>
+        </ol>
       </div>
 
-      <form id="orderForm" class="order-box" action="https://formsubmit.co/tvuj@email.cz" method="POST">
-        <label for="product">Vybraný produkt</label>
-        <input type="text" id="product" name="Produkt" readonly required>
+      <form id="orderForm" class="order-form" action="https://formsubmit.co/tvuj@email.cz" method="POST">
+        <div class="form-heading">
+          <div>
+            <span>Vaše objednávka</span>
+            <strong id="formProductTitle">Nejdřív si vyberte produkt</strong>
+          </div>
+          <span class="form-badge">1 minuta</span>
+        </div>
 
-        <label for="price">Cena za kus</label>
-        <input type="text" id="price" name="Cena za kus" readonly>
+        <div class="product-select" role="group" aria-label="Výběr produktu">
+          <button type="button" data-product="Jahodová marmeláda" data-price="129" data-variant="250 ml">🍓 <span>Marmeláda</span></button>
+          <button type="button" data-product="Hovězí guláš" data-price="189" data-variant="500 ml">🌶️ <span>Guláš</span></button>
+          <button type="button" data-product="Sladká cibuláda" data-price="119" data-variant="200 ml">🧅 <span>Cibuláda</span></button>
+        </div>
 
-        <label for="variant">Velikost balení</label>
-        <input type="text" id="variant" name="Velikost balení" readonly>
+        <input type="hidden" id="product" name="Produkt" required>
+        <input type="hidden" id="price" name="Cena za kus">
+        <input type="hidden" id="variant" name="Velikost balení">
+        <input type="hidden" id="total" name="Celkem">
 
-        <label for="quantity">Počet kusů</label>
-        <input type="number" id="quantity" name="Počet kusů" min="1" value="1" required>
+        <div class="form-row">
+          <label>Počet kusů
+            <div class="quantity-control">
+              <button type="button" id="quantityMinus" aria-label="Odebrat kus">−</button>
+              <input type="number" id="quantity" name="Počet kusů" min="1" value="1" required>
+              <button type="button" id="quantityPlus" aria-label="Přidat kus">＋</button>
+            </div>
+          </label>
+          <div class="order-total">
+            <span>Celkem</span>
+            <strong id="totalDisplay">— Kč</strong>
+            <small>bez případné dopravy</small>
+          </div>
+        </div>
 
-        <label for="total">Celkem orientačně</label>
-        <input type="text" id="total" name="Celkem" readonly>
+        <div class="field-grid">
+          <label>Jméno a příjmení
+            <input type="text" id="name" name="Jméno" autocomplete="name" placeholder="Jan Novák" required>
+          </label>
+          <label>Telefon
+            <input type="tel" id="phone" name="Telefon" autocomplete="tel" placeholder="+420 123 456 789" required>
+          </label>
+        </div>
+        <label>E-mail
+          <input type="email" id="email" name="Email" autocomplete="email" placeholder="vas@email.cz" required>
+        </label>
+        <label>Poznámka <span class="optional">nepovinné</span>
+          <textarea id="note" name="Poznámka" rows="3" placeholder="Například preferovaný termín předání…"></textarea>
+        </label>
 
-        <label for="name">Jméno</label>
-        <input type="text" id="name" name="Jméno" required>
-
-        <label for="phone">Telefon</label>
-        <input type="tel" id="phone" name="Telefon" required>
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="Email" required>
-
-        <label for="note">Poznámka</label>
-        <textarea id="note" name="Poznámka" rows="4"></textarea>
-
-        <button type="submit" class="btn">Odeslat objednávku</button>
+        <button type="submit" class="submit-button">Odeslat objednávku <span>→</span></button>
+        <p class="form-note">Odesláním nezávazné objednávky souhlasíte se zpracováním uvedených údajů pro její vyřízení.</p>
       </form>
     </section>
-
   </main>
 
   <footer>
-    <p>© 2026 Čipoš fáDr.s | Kontakt: info@email.cz</p>
+    <a href="#uvod" class="footer-brand">
+      <img src="images/logos/logo.jpeg" alt="">
+      <span><strong>Čipoš</strong> fáDr.s</span>
+    </a>
+    <p>Poctivé dobroty ze sklenice.</p>
+    <p>© 2026 Čipoš fáDr.s · info@email.cz</p>
   </footer>
 
+  <div id="toast" class="toast" role="status" aria-live="polite">Produkt přidán do objednávky</div>
   <script src="script.js"></script>
 </body>
 </html>
