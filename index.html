@@ -144,7 +144,9 @@
         </ol>
       </div>
 
-      <form id="orderForm" class="order-form" action="https://formsubmit.co/tvuj@email.cz" method="POST">
+      <form id="orderForm" class="order-form" name="objednavka" action="/dekujeme.html" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="objednavka">
+        <p hidden><label>Toto pole nevyplňujte: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="form-heading">
           <div>
             <span>Vaše objednávka</span>
@@ -188,7 +190,7 @@
           </label>
         </div>
         <label>E-mail
-          <input type="email" id="email" name="Email" autocomplete="email" placeholder="vas@email.cz" required>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="vas@email.cz" required>
         </label>
         <label>Poznámka <span class="optional">nepovinné</span>
           <textarea id="note" name="Poznámka" rows="3" placeholder="Například preferovaný termín předání…"></textarea>
@@ -206,7 +208,7 @@
       <span><strong>Čipoš</strong> fáDr.s</span>
     </a>
     <p>Poctivé dobroty ze sklenice.</p>
-    <p>© 2026 Čipoš fáDr.s · info@email.cz</p>
+    <p>© 2026 Čipoš fáDr.s · <a href="mailto:ciposfadr.s@seznam.cz">ciposfadr.s@seznam.cz</a></p>
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite">Produkt přidán do objednávky</div>
