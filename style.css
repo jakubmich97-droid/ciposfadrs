@@ -249,7 +249,7 @@ h1, h2, h3, p { margin-top: 0; }
 .product-visual.jalapeno-photo {
   background:
     linear-gradient(0deg, rgba(20,9,5,.18), transparent 60%),
-    url("images/foods/nakladane-jalapeno.png") center / cover no-repeat;
+    url("images/foods/nakladane-jalapeno.jpg") center / cover no-repeat;
 }
 .onion .product-visual { background: radial-gradient(circle at 50% 45%, #e8b968, #9b6327); }
 .product-visual::after {
