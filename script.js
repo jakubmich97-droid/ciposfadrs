@@ -1,85 +1,121 @@
-const productInput = document.getElementById("product");
-const priceInput = document.getElementById("price");
-const variantInput = document.getElementById("variant");
-const quantityInput = document.getElementById("quantity");
+const orderForm = document.getElementById("orderForm");
+const cartItems = document.getElementById("cartItems");
+const cartSummary = document.getElementById("cartSummary");
+const cartQuantity = document.getElementById("cartQuantity");
 const totalInput = document.getElementById("total");
 const totalDisplay = document.getElementById("totalDisplay");
 const formProductTitle = document.getElementById("formProductTitle");
-const orderForm = document.getElementById("orderForm");
+const cartStatus = document.getElementById("cartStatus");
 const toast = document.getElementById("toast");
-
-let selectedPrice = 0;
+const cart = new Map();
 let toastTimer;
 
 function formatPrice(value) {
   return new Intl.NumberFormat("cs-CZ").format(value) + " Kč";
 }
-
-function updateTotal() {
-  const quantity = Math.max(1, Number.parseInt(quantityInput.value, 10) || 1);
-  quantityInput.value = quantity;
-  const total = selectedPrice * quantity;
-  totalInput.value = selectedPrice ? formatPrice(total) : "";
-  totalDisplay.textContent = selectedPrice ? formatPrice(total) : "— Kč";
+function normalizeQuantity(value) {
+  return Math.min(999, Math.max(1, Math.floor(Number(value) || 1)));
 }
-
-function showToast() {
-  clearTimeout(toastTimer);
-  toast.classList.add("show");
-  toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
-}
-
-function selectProduct(name, price, variant, shouldScroll = false) {
-  productInput.value = name;
-  priceInput.value = formatPrice(price);
-  variantInput.value = variant;
-  selectedPrice = Number(price);
-  formProductTitle.textContent = name + " · " + variant;
-
-  document.querySelectorAll(".product-select button").forEach((button) => {
-    button.classList.toggle("active", button.dataset.product === name);
+function updateSummary() {
+  const items = Array.from(cart.values());
+  const count = items.reduce((sum, item) => sum + item.quantity, 0);
+  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  cartSummary.value = items.map(item =>
+    item.name + " (" + item.variant + ") — " + item.quantity + " ks × " +
+    formatPrice(item.price) + " = " + formatPrice(item.price * item.quantity)
+  ).join("\n");
+  cartQuantity.value = count;
+  totalInput.value = formatPrice(total);
+  totalDisplay.textContent = formatPrice(total);
+  document.getElementById("cartCount").textContent = count;
+  document.getElementById("cartEmpty").hidden = items.length > 0;
+  formProductTitle.textContent = items.length ? "Produktů: " + items.length + " · Kusů: " + count : "Váš košík je prázdný";
+  document.querySelectorAll(".product-select button").forEach(button => {
+    button.classList.toggle("active", cart.has(button.dataset.product));
   });
-
-  updateTotal();
-  if (shouldScroll) {
-    document.getElementById("objednavka").scrollIntoView({ behavior: "smooth", block: "start" });
-    showToast();
-  }
 }
-
-document.querySelectorAll("[data-product]").forEach((button) => {
+function renderCart() {
+  cartItems.replaceChildren();
+  cart.forEach(item => {
+    const row = document.createElement("div");
+    row.className = "cart-item";
+    const info = document.createElement("div");
+    info.className = "cart-item-info";
+    const name = document.createElement("strong");
+    name.textContent = item.name;
+    const detail = document.createElement("small");
+    detail.textContent = item.variant + " · " + formatPrice(item.price) + "/ks";
+    info.append(name, detail);
+    const controls = document.createElement("div");
+    controls.className = "quantity-control";
+    const minus = document.createElement("button");
+    minus.type = "button";
+    minus.textContent = "−";
+    minus.setAttribute("aria-label", "Odebrat kus: " + item.name);
+    const input = document.createElement("input");
+    input.type = "number";
+    input.min = "1";
+    input.max = "999";
+    input.step = "1";
+    input.value = item.quantity;
+    input.setAttribute("aria-label", "Počet kusů: " + item.name);
+    const subtotal = document.createElement("strong");
+    subtotal.className = "cart-subtotal";
+    subtotal.textContent = formatPrice(item.quantity * item.price);
+    input.addEventListener("input", () => {
+      item.quantity = normalizeQuantity(input.value);
+      subtotal.textContent = formatPrice(item.quantity * item.price);
+      updateSummary();
+    });
+    input.addEventListener("change", () => { input.value = item.quantity; });
+    minus.addEventListener("click", () => {
+      if (item.quantity === 1) cart.delete(item.name);
+      else item.quantity--;
+      renderCart();
+    });
+    const plus = document.createElement("button");
+    plus.type = "button";
+    plus.textContent = "＋";
+    plus.setAttribute("aria-label", "Přidat kus: " + item.name);
+    plus.addEventListener("click", () => {
+      item.quantity = normalizeQuantity(item.quantity + 1);
+      renderCart();
+    });
+    controls.append(minus, input, plus);
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "cart-remove";
+    remove.textContent = "Odebrat";
+    remove.setAttribute("aria-label", "Odebrat z košíku: " + item.name);
+    remove.addEventListener("click", () => { cart.delete(item.name); renderCart(); });
+    row.append(info, controls, subtotal, remove);
+    cartItems.append(row);
+  });
+  updateSummary();
+}
+document.querySelectorAll("[data-product]").forEach(button => {
   button.addEventListener("click", () => {
-    selectProduct(
-      button.dataset.product,
-      Number(button.dataset.price),
-      button.dataset.variant,
-      button.classList.contains("product-button")
-    );
+    const name = button.dataset.product;
+    const existing = cart.get(name);
+    if (existing) existing.quantity = normalizeQuantity(existing.quantity + 1);
+    else cart.set(name, { name, price: Number(button.dataset.price), variant: button.dataset.variant, quantity: 1 });
+    cartStatus.textContent = "";
+    renderCart();
+    clearTimeout(toastTimer);
+    toast.textContent = name + " přidán do košíku";
+    toast.classList.add("show");
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
   });
 });
-
-document.getElementById("quantityMinus").addEventListener("click", () => {
-  quantityInput.value = Math.max(1, Number(quantityInput.value) - 1);
-  updateTotal();
-});
-
-document.getElementById("quantityPlus").addEventListener("click", () => {
-  quantityInput.value = Number(quantityInput.value || 1) + 1;
-  updateTotal();
-});
-
-quantityInput.addEventListener("input", updateTotal);
-
-orderForm.addEventListener("submit", (event) => {
-  if (!productInput.value) {
+orderForm.addEventListener("submit", event => {
+  updateSummary();
+  if (!cart.size) {
     event.preventDefault();
-    formProductTitle.textContent = "Vyberte prosím produkt";
-    document.querySelector(".product-select").scrollIntoView({ behavior: "smooth", block: "center" });
-    showToast();
-    toast.textContent = "Nejdřív vyberte produkt";
-    setTimeout(() => { toast.textContent = "Produkt přidán do objednávky"; }, 2400);
+    cartStatus.textContent = "Přidejte prosím alespoň jeden produkt do košíku.";
+    document.querySelector(".product-select button").focus();
   }
 });
+renderCart();
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=cart1">
 </head>
 <body>
   <header class="site-header">
@@ -23,7 +23,7 @@
         <a href="#pribeh">Náš příběh</a>
         <a href="#objednavka">Jak objednat</a>
       </div>
-      <a href="#produkty" class="nav-order">Objednat <span aria-hidden="true">→</span></a>
+      <a href="#objednavka" class="nav-order">Košík <b id="cartCount">0</b> <span aria-hidden="true">→</span></a>
     </nav>
   </header>
 
@@ -136,9 +136,9 @@
       <div class="order-intro">
         <p class="eyebrow dark"><span></span> Jednoduchá objednávka</p>
         <h2>Máte<br><em>vybráno?</em></h2>
-        <p>Vyberte produkt, počet kusů a doplňte kontakt. Objednávku potvrdíme a domluvíme s vámi předání.</p>
+        <p>Přidejte do košíku libovolné produkty, upravte jejich počty a doplňte kontakt. Objednávku potvrdíme a domluvíme s vámi předání.</p>
         <ol>
-          <li><span>1</span> Vyberete dobrotu</li>
+          <li><span>1</span> Naplníte košík</li>
           <li><span>2</span> Odešlete kontakt</li>
           <li><span>3</span> Potvrdíme objednávku</li>
         </ol>
@@ -150,36 +150,29 @@
         <div class="form-heading">
           <div>
             <span>Vaše objednávka</span>
-            <strong id="formProductTitle">Nejdřív si vyberte produkt</strong>
+            <strong id="formProductTitle">Váš košík je prázdný</strong>
           </div>
           <span class="form-badge">1 minuta</span>
         </div>
 
-        <div class="product-select" role="group" aria-label="Výběr produktu">
+        <div class="product-select" role="group" aria-label="Přidat produkt do košíku">
           <button type="button" data-product="Nakládané jalapeño papričky" data-price="95" data-variant="200 ml · pevný podíl 120 g">🌶️ <span>Jalapeño</span></button>
           <button type="button" data-product="Hovězí guláš" data-price="189" data-variant="500 ml">🌶️ <span>Guláš</span></button>
           <button type="button" data-product="Sladká cibuláda" data-price="119" data-variant="200 ml">🧅 <span>Cibuláda</span></button>
         </div>
 
-        <input type="hidden" id="product" name="Produkt" required>
-        <input type="hidden" id="price" name="Cena za kus">
-        <input type="hidden" id="variant" name="Velikost balení">
+        <input type="hidden" id="cartSummary" name="Položky objednávky">
+        <input type="hidden" id="cartQuantity" name="Počet kusů">
         <input type="hidden" id="total" name="Celkem">
-
-        <div class="form-row">
-          <label>Počet kusů
-            <div class="quantity-control">
-              <button type="button" id="quantityMinus" aria-label="Odebrat kus">−</button>
-              <input type="number" id="quantity" name="Počet kusů" min="1" value="1" required>
-              <button type="button" id="quantityPlus" aria-label="Přidat kus">＋</button>
-            </div>
-          </label>
-          <div class="order-total">
-            <span>Celkem</span>
-            <strong id="totalDisplay">— Kč</strong>
-            <small>bez případné dopravy</small>
-          </div>
+        <div id="cartItems" class="cart-items"></div>
+        <p id="cartEmpty" class="cart-empty">Košík je prázdný. Přidejte produkty tlačítky výše.</p>
+        <p id="cartStatus" role="status" aria-live="polite" class="cart-status"></p>
+        <div class="order-total cart-total">
+          <span>Celkem za košík</span>
+          <strong id="totalDisplay">0 Kč</strong>
+          <small>bez případné dopravy</small>
         </div>
+        <noscript><p>Pro sestavení košíku zapněte JavaScript, nebo nám objednávku napište na ciposfadr.s@seznam.cz.</p></noscript>
 
         <div class="field-grid">
           <label>Jméno a příjmení
@@ -212,6 +205,6 @@
   </footer>
 
   <div id="toast" class="toast" role="status" aria-live="polite">Produkt přidán do objednávky</div>
-  <script src="script.js"></script>
+  <script src="script.js?v=cart1"></script>
 </body>
 </html>
