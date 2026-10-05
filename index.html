@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Čipoš fáDr.s – poctivé domácí dobroty ve skle. Vyberte si nakládané jalapeño, guláš nebo cibuládu a jednoduše objednejte.">
+  <meta name="description" content="Čipoš fáDr.s – poctivé domácí dobroty ve skle. Objednejte si nakládané jalapeño papričky v kořeněném sladkokyselém nálevu.">
   <meta name="theme-color" content="#120b08">
   <title>Čipoš fáDr.s | Domácí dobroty, které mají říz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=cart1">
+  <link rel="stylesheet" href="style.css?v=jalapeno1">
 </head>
 <body>
   <header class="site-header">
@@ -33,7 +33,7 @@
         <div class="hero-content">
           <p class="eyebrow"><span></span> Poctivá domácí výroba</p>
           <h1>Domácí dobroty,<br>které mají <em>říz.</em></h1>
-          <p class="hero-copy">Zavařeniny, guláše a další dobroty ze sklenice. Vaříme v malých dávkách, z dobrých surovin a bez zbytečností.</p>
+          <p class="hero-copy">Nakládané jalapeño papričky v kořeněném sladkokyselém nálevu. Vaříme v malých dávkách, z dobrých surovin a bez zbytečností.</p>
           <div class="hero-actions">
             <a href="#produkty" class="btn btn-primary">Vybrat dobrotu <span>→</span></a>
             <a href="#pribeh" class="text-link">Proč chutnají jinak <span>↘</span></a>
@@ -46,9 +46,9 @@
         </div>
         <aside class="hero-card">
           <span class="hero-card-label">Tip fáDr.s</span>
-          <strong>Hovězí guláš</strong>
-          <p>Otevřít. Ohřát. Vychutnat.</p>
-          <div><span>500 ml</span><b>189 Kč</b></div>
+          <strong>Nakládané jalapeño</strong>
+          <p>Pikantní dobrota ke každému soustu.</p>
+          <div><span>200 ml</span><b>95 Kč</b></div>
         </aside>
       </div>
     </section>
@@ -62,7 +62,7 @@
         <p>Každý produkt připravujeme v malých dávkách. Když dojde, vaříme znovu — žádný sklad plný kompromisů.</p>
       </div>
 
-      <div class="product-grid">
+      <div class="product-grid single-product">
         <article class="product-card jalapeno">
           <div class="product-visual jalapeno-photo">
             <span class="product-number">01</span>
@@ -80,39 +80,7 @@
           </div>
         </article>
 
-        <article class="product-card goulash featured">
-          <div class="product-visual photo">
-            <span class="product-number">02</span>
-            <span class="bestseller">Nejoblíbenější</span>
-            <span class="stock">Skladem</span>
-          </div>
-          <div class="product-content">
-            <p class="product-type">Pořádná porce</p>
-            <h3>Hovězí guláš</h3>
-            <p>Silný domácí guláš ve skle. Pomalu tažené maso, výrazná šťáva a večeře hotová za pár minut.</p>
-            <div class="product-bottom">
-              <div><strong>189 Kč</strong><span>500 ml</span></div>
-              <button type="button" class="product-button" data-product="Hovězí guláš" data-price="189" data-variant="500 ml" aria-label="Objednat Hovězí guláš">Přidat <span>＋</span></button>
-            </div>
-          </div>
-        </article>
 
-        <article class="product-card onion">
-          <div class="product-visual">
-            <span class="product-number">03</span>
-            <span class="product-icon" aria-hidden="true">🧅</span>
-            <span class="stock">Skladem</span>
-          </div>
-          <div class="product-content">
-            <p class="product-type">K masu i sýru</p>
-            <h3>Sladká cibuláda</h3>
-            <p>Pomalu karamelizovaná cibule, která povýší burger, grilované maso i sýrové prkénko.</p>
-            <div class="product-bottom">
-              <div><strong>119 Kč</strong><span>200 ml</span></div>
-              <button type="button" class="product-button" data-product="Sladká cibuláda" data-price="119" data-variant="200 ml" aria-label="Objednat Sladkou cibuládu">Přidat <span>＋</span></button>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -155,10 +123,8 @@
           <span class="form-badge">1 minuta</span>
         </div>
 
-        <div class="product-select" role="group" aria-label="Přidat produkt do košíku">
+        <div class="product-select single-product" role="group" aria-label="Přidat produkt do košíku">
           <button type="button" data-product="Nakládané jalapeño papričky" data-price="95" data-variant="200 ml · pevný podíl 120 g">🌶️ <span>Jalapeño</span></button>
-          <button type="button" data-product="Hovězí guláš" data-price="189" data-variant="500 ml">🌶️ <span>Guláš</span></button>
-          <button type="button" data-product="Sladká cibuláda" data-price="119" data-variant="200 ml">🧅 <span>Cibuláda</span></button>
         </div>
 
         <input type="hidden" id="cartSummary" name="Položky objednávky">
